@@ -1,0 +1,40 @@
+[*] Manual laravel:
+	Dependencias: 
+		NodeJS
+		Composer 
+
+[*] Instalador de laravel desde composer
+	composer global require laravel/installer
+
+[*] Ver versión de laravel:
+	laravel
+
+[*] Crear proyecto:
+	laravel new [Nombre Proyecto]
+	laravel new proyecto
+
+[*] Iniciar servidor local
+	php artisan serve
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
+[*] 
+
