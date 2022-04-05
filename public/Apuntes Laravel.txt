@@ -23,7 +23,14 @@
 [*] dd();
     función similar a var_dump para imprimir arrays
 
-[*]
+[*] En caso de error de ejecución en las migrations, se va a:
+    app\Providers\AppServiceProviders.php
+
+        1) se importa el uso de la libreria Schema;
+            use Illuminate\Support\Facades\Schema;
+
+        2) En el boot se agrega.
+            Schema::defaultStringLength(200);
 
 [*]
 
