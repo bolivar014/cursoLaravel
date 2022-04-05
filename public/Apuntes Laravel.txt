@@ -32,13 +32,18 @@
         2) En el boot se agrega.
             Schema::defaultStringLength(200);
 
-[*]
+[*] Ejecución de migraciones:
+    php artisan migrate
 
-[*]
+[*] Creación de migración:
+    php artisan make:migration [Descripción_de_la_tabla] --create=[nombre_tabla]
+    php artisan make:migration create_table_expense_reports --create=expense_reports
 
-[*]
+[*] Regresar a migración anterior de acuerdo a su ultima ejecución
+    php artisan migrate:rollback
 
-[*]
+[*] Elimina y crea de nuevo las tablas
+    php artisan migrate:fresh
 
 [*]
 
