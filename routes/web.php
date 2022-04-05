@@ -16,3 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Retornamos ruta
+Route::get('/test', function() {
+    // Retornamos string
+    // return 'Hola mundo';
+    
+    // Retornamos JSON
+    return [
+        'saludo' => 'Hola',
+        'nombre' => "Mundo"
+    ];
+
+});
