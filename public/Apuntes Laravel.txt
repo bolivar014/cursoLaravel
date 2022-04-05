@@ -1,7 +1,7 @@
 [*] Manual laravel:
-	Dependencias: 
+	Dependencias:
 		NodeJS
-		Composer 
+		Composer
 
 [*] Instalador de laravel desde composer
 	composer global require laravel/installer
@@ -16,25 +16,28 @@
 [*] Iniciar servidor local
 	php artisan serve
 
-[*] 
+[*] Creación de controladores
+    php artisan make:controller NameController
+    php artisan make:controller HomeController
 
-[*] 
+[*] dd();
+    función similar a var_dump para imprimir arrays
 
-[*] 
+[*]
 
-[*] 
+[*]
 
-[*] 
+[*]
 
-[*] 
+[*]
 
-[*] 
+[*]
 
-[*] 
+[*]
 
-[*] 
+[*]
 
-[*] 
+[*]
 
-[*] 
+[*]
 
