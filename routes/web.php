@@ -21,11 +21,10 @@ Route::get('/', function () {
 Route::get('/test', function() {
     // Retornamos string
     // return 'Hola mundo';
-    
+
     // Retornamos JSON
-    return [
-        'saludo' => 'Hola',
-        'nombre' => "Mundo"
-    ];
+    return view('test', [
+        'title' => 'Titulo Curso P.'
+    ]);
 
 });
