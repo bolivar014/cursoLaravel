@@ -1,6 +1,10 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
+// Importamos controladores de rutas
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
+
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,18 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Controlador de ruta para HomeController@index
+Route::get('/', [HomeController::class, 'index']);
 
 // Retornamos ruta
-Route::get('/test', function() {
-    // Retornamos string
-    // return 'Hola mundo';
-
-    // Retornamos JSON
-    return view('test', [
-        'title' => 'Titulo Curso P.'
-    ]);
-
-});
+Route::get('/dashboard', [DashboardController::class, 'index']);
