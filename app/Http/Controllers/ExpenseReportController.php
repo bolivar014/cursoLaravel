@@ -70,7 +70,13 @@ class ExpenseReportController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Buscamos reporte a actualizar
+        $report = ExpenseReport::find($id);
+
+        // Retornamos vista editar reporte con el reporte a editar
+        return view('expenseReport.edit', [
+            'report' => $report
+        ]);
     }
 
     /**
@@ -82,7 +88,17 @@ class ExpenseReportController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Buscamos el reporte a editar
+        $report = ExpenseReport::find($id);
+
+        // obtenemos el title del request enviado
+        $report->title = $request->get('title');
+
+        // Ejecutamos guardar actualización
+        $report->save();
+
+        // Redireccionamos
+        return redirect('/expense_reports');
     }
 
     /**
