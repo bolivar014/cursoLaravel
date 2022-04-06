@@ -45,6 +45,36 @@
 [*] Elimina y crea de nuevo las tablas
     php artisan migrate:fresh
 
+[*] Creación de modelos en artisan
+    php artisan make:model [NameModel]
+    php artisan make:model ExpenseReport
+
+[*] php artisan tinker
+    -> entorno de pruebas
+
+        App\Models\[NameModel]::all();
+            simulación de recibir todo lo que exista en el modelo
+
+[*]     $report = new App\Models\ExpenseReport::all();
+            Almacenamos respuesta en variable
+
+        $report->save();
+            Guardamos datos en memoria.
+
+[*]
+
+[*]
+
+[*]
+
+[*]
+
+[*]
+
+[*]
+
+[*]
+
 [*]
 
 [*]
