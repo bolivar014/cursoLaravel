@@ -13,7 +13,7 @@
                     <table class="table">
                         @foreach ($expenseReports as $expenseReport)
                             <tr>
-                                <td>{{ $expenseReport->updated_at }}</td>
+                                <td>{{ $expenseReport->title }}</td>
                             </tr>
                         @endforeach
                     </table>

@@ -39,7 +39,16 @@ class ExpenseReportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Instancio conexión al modelo
+        $report = new ExpenseReport();
+
+        // Recupero el title desde el formulario
+        $report->title = $request->get('title');
+
+        // Guardo cambios
+        $report->save();
+
+        return redirect('/expense_reports');
     }
 
     /**
