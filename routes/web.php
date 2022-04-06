@@ -3,6 +3,8 @@ use Illuminate\Support\Facades\Route;
 // Importamos controladores de rutas
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ExpenseReportController;
+use App\Http\Models\ExpenseReport;
 
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -22,3 +24,7 @@ Route::get('/', [HomeController::class, 'index']);
 
 // Retornamos ruta
 Route::get('/dashboard', [DashboardController::class, 'index']);
+
+// Resource
+Route::resource('/expense_reports', ExpenseReportController::class);
+
