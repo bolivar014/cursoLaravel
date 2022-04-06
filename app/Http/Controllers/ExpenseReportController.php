@@ -39,15 +39,21 @@ class ExpenseReportController extends Controller
      */
     public function store(Request $request)
     {
+        // Validación de inputs
+        $validarData = $request->validate([
+            'title' => 'required|min:3|max:10'
+        ]);
+
         // Instancio conexión al modelo
         $report = new ExpenseReport();
 
         // Recupero el title desde el formulario
-        $report->title = $request->get('title');
+        $report->title = $validarData['title'];
 
         // Guardo cambios
         $report->save();
 
+        // Redireccionamos
         return redirect('/expense_reports');
     }
 

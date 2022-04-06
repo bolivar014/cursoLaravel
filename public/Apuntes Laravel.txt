@@ -68,7 +68,19 @@
 [*] php artisan route:list
         Ver todas las rutas dentro del proyecto
 
-[*]
+[*] Validatación de inputs por medio de laravel
+    URL: https://laravel.com/docs/9.x/validation#available-validation-rules
+
+        php artisan
+
+        // Validación de inputs
+        $validarData = $request->validate([
+            'title' => 'required|min:3|max:10'
+        ]);
+
+        adicional, después de parametrizar el valor recibido desde algun input, procedes a reutilizar dicho request.
+            // Recupero el title desde el formulario
+            $report->title = $validarData['title'];
 
 [*]
 
