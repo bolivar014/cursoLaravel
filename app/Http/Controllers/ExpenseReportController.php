@@ -94,11 +94,16 @@ class ExpenseReportController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // Validación de Input
+        $validarData = $request->validate([
+            'title' => 'required|min:3|max:10'
+        ]);
+
         // Buscamos el reporte a editar
         $report = ExpenseReport::findOrFail($id);
 
         // obtenemos el title del request enviado
-        $report->title = $request->get('title');
+        $report->title = $validarData['title'];
 
         // Ejecutamos guardar actualización
         $report->save();
