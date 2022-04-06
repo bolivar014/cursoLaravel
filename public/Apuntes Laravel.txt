@@ -82,9 +82,26 @@
             // Recupero el title desde el formulario
             $report->title = $validarData['title'];
 
-[*]
+[*] Relaciones en Eloquent
+    php artisan make:model -m [Name]
+    php artisan make:model -m Expense
+         "Crea un modelo y migración en simultaneo"
 
-[*]
+[*] Tipos de relaciones laravel
+    URL: https://laravel.com/docs/5.8/eloquent-relationships
+
+        1 a 1 —> $this->hasOne(‘App\Model’);
+        1 a M —> $this->hasMany(‘App\Model’);
+        M a 1 —> $this->belongsToMany(‘App\Model’);
+        M a M —> $this->belongsToMany(‘App\Model’);
+
+        Consultar registros por medio de tinker por medio de sus relaciones
+            App\Models\ExpenseReport::first(); // Busca la primer coincidencia en ExpenseReport
+
+        Busca la primer coincidencia en ExpenseReport relacionandolo con la tabla expenses
+            App\Models\ExpenseReport::first()->expenses;
+
+
 
 [*]
 
