@@ -71,7 +71,7 @@ class ExpenseReportController extends Controller
     public function edit($id)
     {
         // Buscamos reporte a actualizar
-        $report = ExpenseReport::find($id);
+        $report = ExpenseReport::findOrFail($id);
 
         // Retornamos vista editar reporte con el reporte a editar
         return view('expenseReport.edit', [
@@ -89,7 +89,7 @@ class ExpenseReportController extends Controller
     public function update(Request $request, $id)
     {
         // Buscamos el reporte a editar
-        $report = ExpenseReport::find($id);
+        $report = ExpenseReport::findOrFail($id);
 
         // obtenemos el title del request enviado
         $report->title = $request->get('title');
@@ -109,6 +109,24 @@ class ExpenseReportController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Buscamos el reporte a editar
+        $report = ExpenseReport::findOrFail($id);
+
+        // Ejecutamos guardar actualización
+        $report->delete();
+
+        // Redireccionamos
+        return redirect('/expense_reports');
+    }
+
+    // Función para la confirmación de eliminación del reporte
+    public function confirmDelete($id) {
+        // dd($id);
+        $report = ExpenseReport::findOrFail($id);
+
+        // Retornar via de confirmación de eliminación
+        return view('expenseReport.confirmDelete', [
+            'report' => $report
+        ]);
     }
 }

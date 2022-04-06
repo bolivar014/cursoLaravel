@@ -28,3 +28,5 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 // Resource
 Route::resource('/expense_reports', ExpenseReportController::class);
 
+// Controlador de ruta "Confirmar eliminación"
+Route::get('/expense_reports/{id}/confirmDelete', [ExpenseReportController::class, 'confirmDelete']);
