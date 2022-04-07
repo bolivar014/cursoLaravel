@@ -101,8 +101,6 @@
         Busca la primer coincidencia en ExpenseReport relacionandolo con la tabla expenses
             App\Models\ExpenseReport::first()->expenses;
 
-
-
 [*]
 
 [*]

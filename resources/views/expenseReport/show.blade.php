@@ -3,31 +3,29 @@
         <div class="content">
             <div class="row">
                 <div class="col">
-                    <h1>Edit Report: {{$report->id}}</h1>
+                    <h1>Show Report: {{$report->title}}</h1>
                     <a class="btn btn-secondary" href="/expense_reports">Back</a>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
-                    @if($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                    <form action="/expense_reports/{{ $report->id }}" method="POST">
-                        @csrf
-                        @method('put')
-                        <div class="form-group">
-                            <label for="title">Title</label>
-                            <input type="text" class="form-control" id="title" name="title" placeholder="Type a title" value="{{ old('title') }}">
-                        </div>
-                        <button class="btn btn-primary" type="submit">Submit</button>
-                    </form>
+                    <h3>Details</h3>
+                    <table class="table">
+                        @foreach ($report->expenses as $expense)
+                            <tr>
+                                <td>{{ $expense->description }}</td>
+                                <td>{{ $expense->created_at }}</td>
+                                <td>{{ $expense->amount }}</td>
+                            </tr>
+                        @endforeach
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <a class="btn btn-primary" href="/expense_reports/{{ $report->id }}/expenses/create">New expense</a>
                 </div>
             </div>
         </div>

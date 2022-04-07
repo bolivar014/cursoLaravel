@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 //
 use App\Models\ExpenseReport;
+use App\Models\Expense;
 use Illuminate\Http\Request;
 
 class ExpenseReportController extends Controller

@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExpenseReportController;
-use App\Http\Models\ExpenseReport;
+use App\Http\Controllers\ExpenseController;
+use App\Http\Controllers\ExpenseReport;
 
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -30,3 +31,10 @@ Route::resource('/expense_reports', ExpenseReportController::class);
 
 // Controlador de ruta "Confirmar eliminación"
 Route::get('/expense_reports/{id}/confirmDelete', [ExpenseReportController::class, 'confirmDelete']);
+
+// Controlador para Crear expenses asociados a un Reporte
+Route::get('/expense_reports/{expense_report}/expenses/create', [ExpenseController::class, 'create']);
+
+//  Controlador para Almacenar expenses asociados a un Reporte
+Route::post('/expense_reports/{expense_report}/expenses', [ExpenseController::class, 'store']);
+
