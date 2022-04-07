@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 //
+
 use App\Models\ExpenseReport;
 use App\Models\Expense;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SummaryReport;
 
 class ExpenseReportController extends Controller
 {
@@ -159,10 +162,14 @@ class ExpenseReportController extends Controller
     }
 
     // función para enviar correo
-    public function sendMail($id) {
+    public function sendMail(Request $request, $id) {
         // Consultamos datos del reporte
         $report = ExpenseReport::find($id);
 
-        return $report;
+        // Ejecutamos envio del email con la vista a procesar....
+        Mail::to($request->get('email'))->send(new SummaryReport($report));
+
+        // Retornamos vista
+        return redirect('/expense_reports/' . $id);
     }
 }
