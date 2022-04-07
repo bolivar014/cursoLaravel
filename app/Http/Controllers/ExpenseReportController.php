@@ -146,4 +146,23 @@ class ExpenseReportController extends Controller
             'report' => $report
         ]);
     }
+
+    // Función para el envio de email
+    public function confirmSendMail($id) {
+        // Consultamos datos del reporte
+        $report = ExpenseReport::find($id);
+
+        // Retornamos la vista con el reporte
+        return view('expenseReport.confirmSendMail', [
+            'report' => $report
+        ]);
+    }
+
+    // función para enviar correo
+    public function sendMail($id) {
+        // Consultamos datos del reporte
+        $report = ExpenseReport::find($id);
+
+        return $report;
+    }
 }
