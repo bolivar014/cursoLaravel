@@ -44,3 +44,11 @@ Route::get('/expense_reports/{expense_report}/expenses/create', [ExpenseControll
 //  Controlador para Almacenar expenses asociados a un Reporte
 Route::post('/expense_reports/{expense_report}/expenses', [ExpenseController::class, 'store']);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

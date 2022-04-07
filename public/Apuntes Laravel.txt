@@ -101,10 +101,15 @@
         Busca la primer coincidencia en ExpenseReport relacionandolo con la tabla expenses
             App\Models\ExpenseReport::first()->expenses;
 
-[*]
+[*] Crear Clase email
+    php artisan make:mail NameReport
+    php artisan make:mail SummaryReport
 
-[*]
-
+[*] Crear Scraffolding de autenticación
+        composer require laravel/ui --dev
+        php artisan ui vue --auth
+        npm install && npm run dev
+        php artisan ui:auth
 [*]
 
 [*]

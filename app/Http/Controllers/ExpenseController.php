@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class Expensecontroller extends Controller
 {
+    // Agregamos constructor
+    public function __construct() {
+        // Agregamos middleware de auth
+        return $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *

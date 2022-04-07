@@ -11,6 +11,12 @@ use App\Mail\SummaryReport;
 
 class ExpenseReportController extends Controller
 {
+    // Agregamos constructor
+    public function __construct() {
+        // Agregamos middleware de auth
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
